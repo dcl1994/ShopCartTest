@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.siyann.shopcarttest.ShopCartActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_above="@+id/textview_shopping"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/no_shoppingcart" />
+
+        <TextView
+            android:id="@+id/textview_shopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:text="亲~购物车空空的呢，赶快去选购吧！"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/goshoping"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textview_shopping"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_bg"
+            android:text="去逛逛"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <!--顶部栏-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <CheckBox
+            android:id="@+id/checkbox"
+            style="@style/checkedstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"
+            android:layout_toRightOf="@+id/checkbox"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清空购物车"
+            android:layout_toLeftOf="@+id/delete_img"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/delete_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/delete_bg"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shopcart_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:descendantFocusability="afterDescendants">
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="合计:"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/shopcar_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数量:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/shopcar_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="0"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/orange_color"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#FAFAFA"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_go_to_pay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="去结算"
+            android:textColor="#FAFAFA" />
+    </LinearLayout>
+
+
+</LinearLayout>
